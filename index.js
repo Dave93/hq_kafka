@@ -9,7 +9,7 @@ const fastify = require("fastify");
 
 
 // Connection URL
-const url = "mongodb://root:pnV6ABZcYL6Cm4@localhost:27017";
+const url = process.env.MONGODB_URL;
 const client = new MongoClient(url);
 
 // Database Name
@@ -56,7 +56,7 @@ function formatNumber(num) {
 (async () => {
   const kafka = new Kafka({
     // clientId: "my-app",
-    brokers: ["localhost:29092"],
+    brokers: [process.env.KAFKA_BORKER],
     // sasl: {
     //   mechanism: "scram-sha-512", // scram-sha-256 or scram-sha-512
     //   // username: "chopar_davr", // producer
