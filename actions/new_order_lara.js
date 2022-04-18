@@ -7,11 +7,12 @@ const action = async ($data) => {
     console.log('action data', $data);
 
     try {
-        await axios.post(`${process.env.B24_API_URL}new.order.lara`, {
+        const result = await axios.post(`${process.env.B24_API_URL}new.order.lara`, {
             data: $data
         });
+        // console.log(result);
     } catch (e) {
-
+        console.log(e);
     }
 }
 
